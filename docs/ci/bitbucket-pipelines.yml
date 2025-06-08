@@ -1,0 +1,12 @@
+pipelines:
+  default:
+    - step:
+        name: Scan for Secrets
+        image: php:8.2
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -y unzip git
+          - curl -sS https://getcomposer.org/installer | php
+          - php composer.phar install
+          - php bin/secrets-detector secrets:scan --fail-on-detect

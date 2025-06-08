@@ -1,0 +1,9 @@
+secrets_detector:
+  image: php:8.2
+  stage: test
+  before_script:
+    - apt-get update && apt-get install -y unzip git
+    - curl -sS https://getcomposer.org/installer | php
+    - php composer.phar install
+  script:
+    - php bin/secrets-detector secrets:scan --fail-on-detect

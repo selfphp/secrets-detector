@@ -1,0 +1,47 @@
+{
+  "name": "selfphp/secrets-detector",
+  "description": "Detect secrets like API keys, tokens or passwords in PHP projects (e.g. in .env, config, or PHP source). Ideal for CI/CD and pre-commit hooks.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "security",
+    "secrets",
+    "api-key",
+    "ci",
+    "composer",
+    "token",
+    "audit",
+    "pre-commit"
+  ],
+  "authors": [
+    {
+      "name": "Damir Enseleit",
+      "email": "damir.enseleit@selfphp.de",
+      "homepage": "https://www.selfphp.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "symfony/console": "^7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Selfphp\\SecretsDetector\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Selfphp\\SecretsDetector\\Tests\\": "tests/"
+    }
+  },
+  "bin": [
+    "bin/secrets-detector"
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require-dev": {
+    "phpunit/phpunit": "^12.2"
+  }
+}
